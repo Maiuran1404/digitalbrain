@@ -1,1 +1,1 @@
-web: gunicorn digitalbrain.wsgi --log-file -
+web: gunicorn /digitalbrain/digitalbrain.wsgi --log-file -
