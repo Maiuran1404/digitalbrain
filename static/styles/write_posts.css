@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 li, a, button{
     font-family: "Montserrat", sans-serif;
@@ -8,6 +9,7 @@ li, a, button{
 }
 
 header{
+    font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -29,6 +31,7 @@ header{
 }
 
 .nav_links li a{
+    font-family: "Montserrat", sans-serif;
     transition: all 0.3s ease 0ms;
 }
 
