@@ -88,15 +88,15 @@ WSGI_APPLICATION = 'digitalbrain.wsgi.application'
 #}
 
 
-DATABASES = { 
-    'default':{
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'digitalbrain',
-        'USER': 'postgres',
-        'PASSWORD': '1404',
-        'HOST': 'LOCALHOST',
-    }
-}
+#DATABASES = { 
+#    'default':{
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'digitalbrain',
+#        'USER': 'postgres',
+#        'PASSWORD': '1404',
+#        'HOST': 'LOCALHOST',
+#    }
+#}
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
