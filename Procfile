@@ -1,0 +1,1 @@
+web: gunicorn digitalbrain.wsgi --log-file -
