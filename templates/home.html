@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+<!--{% extends 'base.html' %}
 
-{% block content %} 
+{% block content %} -->
 <!DOCTYPE html>
 <head>
     <title>Digital Brain</title>
@@ -26,7 +26,7 @@
                 <li class="cta"><span><a href="accounts/logout"><button>Logout</button></a></span></li>
                 {% else %}
                 <a class="logo"href="/">Digital Brain</a>
-                <li><a href="accounts/login">Register/Login</a></li>
+                <li><a href="accounts/login">Sign up / Sign in</a></li>
                 {% endif %}
             </ul>
         </nav>
@@ -34,6 +34,18 @@
     
             
     <!--- Body -->
+
+    <div class="inspire">
+        <div class="inspire-text">
+            <span></span>
+            <h1>Hacking human memory</h1>
+            <p>Have your key take-aways from books and courses refreshed at given time-intervals 
+                for less than 5 min per day. </p>
+        </div>
+        <div class="inspire-banner">
+            <img src="/static/images/dragon.png">
+        </div>
+    </div> 
 
 
 </div> <!-- This is the super container closing div-->
@@ -43,4 +55,4 @@
 </body>
 </html>
 
-{% endblock %}
+<!--{% endblock %}-->
