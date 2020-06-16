@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block content %} 
+{% block content %}
 
 <!DOCTYPE html>
   <head>
@@ -28,18 +28,19 @@
           </ul>
       </nav>
     </header>
-    
+
     <div class="wrapper">
       <form action="write_post" method="post">
         {% csrf_token %}
-        <input type="text" class="create-text" name="description" placeholder="Description" required><br>
-        <input type="text" class="create-text" name="source" placeholder="Source"><br>
-        <input type="text" class="create-text" name="subject" placeholder="Subject"><br>
+        {{ form.as_p }}
+        <!--<input type="text" class="create-text" name="description" placeholder="Description, max 280 characters" maxlength="280" required><br>
+        <input type="text" class="create-text" name="subject" placeholder="Subject" required><br>
+        <input type="text" class="create-text" name="subcategory" placeholder="Category"><br>
+        -->
         <input type="submit" class="submit-btn">
       </form>
     </div>
 
-    
   </body>
 </html>
 

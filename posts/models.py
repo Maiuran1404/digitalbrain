@@ -10,13 +10,13 @@ from django.contrib.auth import get_user_model
 #        return timezone.now()
 
 class Post(models.Model):
-    description = models.TextField(max_length=280)
+    description = models.CharField(max_length=280)
     created = models.DateTimeField(auto_now_add = True)
     updated = models.DateTimeField(auto_now = True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     seen = models.IntegerField(default=0, editable=False)
-    source = models.TextField()
     subject = models.TextField()  #Change this to multiple choice/autofill option
+    subcategory = models.TextField()
 
     def __str__(self):
         return str(self.description)
@@ -26,10 +26,3 @@ class Post(models.Model):
 
     def writePost(self, description, source, subject):
         post = self(description=description, source=source, subject=subject)
-    
-
-
-
-
- 
-

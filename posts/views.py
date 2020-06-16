@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from .models import Post
 from django.contrib.auth.models import User, auth
 from .filters import OrderFilter
 import json
@@ -12,6 +11,8 @@ from django.utils.timezone import utc
 import schedule
 import time
 
+from .forms import createPost
+from .models import Post
 
 # Create your views here.
 def posts(request):
@@ -22,7 +23,7 @@ def selectPost(request):
     if request.method == 'POST':
         subject = request.POST['subject']
         print(subject)
-        selected_posts = Post.objects.filter(subject=subject)
+        selected_posts = Post.objects.filter(author_id=request.user).filter(subject=subject)
         return render(request, 'all_posts.html', {'selected_posts': selected_posts})
     else:
         posts = Post.objects.filter(author_id=request.user).order_by('updated')
@@ -31,15 +32,17 @@ def selectPost(request):
 def writePost(request):
 
     if request.method == 'POST':
+        form = createPost(request.POST)
+
         description = request.POST['description']
-        source = request.POST['source']
+        subcategory = request.POST['subcategory']
         subject = request.POST['subject']
-        
-        post = Post(description=description, source=source, subject=subject, seen = 0, author_id=request.user.pk)
+
+        post = Post(description=description, subcategory=subcategory, subject=subject, seen = 0, author_id=request.user.pk)
         post.save()
         print('Post created')
-        return redirect('all_posts')
-        
+        return redirect('write_post')
+
     else:
         return render(request, 'write_post.html')
 
